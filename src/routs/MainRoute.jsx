@@ -4,6 +4,8 @@ import Home from "../pages/Home/Home";
 import AddCoffee from "../pages/AddCoffee/AddCoffee";
 import UpdateCoffee from "../components/UpdateCoffee/UpdateCoffee";
 import Error from "../components/ErrorPage/Error";
+import Login from "../pages/Login/Login";
+import Signup from "../pages/Signup/Signup";
 
 const MainRouter = createBrowserRouter([
     {
@@ -22,7 +24,16 @@ const MainRouter = createBrowserRouter([
             {
                 path: '/updatecoffee',
                 element: <UpdateCoffee></UpdateCoffee>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/signup',
+                element: <Signup></Signup>
             }
+
         ]
     }
 ])
