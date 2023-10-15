@@ -8,11 +8,11 @@ const Hero = () => {
     return (
         <div className=''>
             <div>
-            <div className='absolute left-0 w-full top-[600px] md:top-[900px] lg:top-[1100px]'>
-                <img src={cup} alt="" className='w-3/12 top-36'/>
+            <div className='absolute left-0 w-52 top-[600px] md:top-[900px] lg:top-[1100px]'>
+                <img src={cup} alt="" className='w-full top-36'/>
             </div>
-            <div className=' absolute top-[700px] md:top-[900px] lg:top-[1200px] right-0 lg:'>
-                <img src={house} alt=""/>
+            <div className=' absolute w-52 top-[700px] md:top-[900px] lg:top-[1200px] right-0 lg:'>
+                <img src={house} alt="" className='w-full'/>
             </div>
             </div>
             <div className=" z-30 mt-24 flex flex-col justify-center items-center gap-4">
