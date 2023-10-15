@@ -1,9 +1,12 @@
+import BottomBanner from "../../components/Banner/BottomBanner";
+import HomeBanner from "../../components/Banner/HomeBanner";
 
 const Home = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+        <HomeBanner></HomeBanner>
+        <BottomBanner></BottomBanner>
+        </>
     );
 };
 
