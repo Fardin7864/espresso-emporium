@@ -6,7 +6,7 @@ import roasting from "../../assets/images/icons/4.png"
 
 const BottomBanner = () => {
     return (
-        <div className=" border-2 border-red-500">
+        <div>
             <div className=" flex bg-[#ECEAE3] md:gap-4 justify-center items-center md:py-14 py-2 md:px-8 px-3 gap-2">
                 <div className=" max-w-[301px]">
                     <img src={aroma} alt="" className=" w-6 h-6 md:w-14 md:h-14"/>
