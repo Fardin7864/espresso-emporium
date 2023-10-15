@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
   return (
@@ -30,9 +31,10 @@ const Login = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button type="submit" className="btn btn-primary">Login</button>
+              <button type="submit" className="btn flex gap-2 items-center justify-center bg-[#E3B577] text-white border border-[#331A15] font-rancho font-normal text-lg">Login</button>
             </div>
           <p>Do not have account? <Link to='/signup'><span className=" text-blue-600">Sign Up</span></Link></p>
+          <SocialLogin></SocialLogin>
           </form>
         </div>
       </div>
