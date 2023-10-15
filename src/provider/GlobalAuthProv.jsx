@@ -11,8 +11,8 @@ const GlobalAuthProv = ({children}) => {
     const [isLoading, setIsLoading] = useState(true);
 
     //toastify
-    const success = () => {    
-        toast('Successfully logIn!', {
+    const success = (message) => {    
+        toast(`Successfully ${message}!`, {
            position: "top-right",
            autoClose: 5000,
            hideProgressBar: false,
@@ -62,14 +62,8 @@ const GlobalAuthProv = ({children}) => {
 
     useEffect(() => { 
         const unsubscribe = onAuthStateChanged(auth, (currentUser) =>{
-            if (currentUser) {
-                success();
-                setUser(currentUser);
-                setIsLoading(false);
-            }
-            else{
-                faild();
-            }
+            setUser(currentUser);
+            setIsLoading(false);
         })
         return () => { 
             unsubscribe();

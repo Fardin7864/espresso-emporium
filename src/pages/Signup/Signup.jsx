@@ -1,19 +1,35 @@
 import { Link } from "react-router-dom";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/GlobalAuthProv";
 
 const Signup = () => {
+  const {createUserWithEmail, success} = useContext(AuthContext)
+  const handleSubmit =(e) => { 
+    e.preventDefault();
+    const  name= e.target.name.value
+    const  email= e.target.email.value
+    const  password= e.target.password.value
+    createUserWithEmail(email, password)
+    .then(() => { 
+      success("Sign Up");
+     })
+     .catch(err => console.log(err.message))
+
+   }
     return (
         <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col w-3/5">
             <h1 className="text-5xl font-bold font-rancho text-shadow-custom">Sign Up now!</h1>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="name-text">Name</span>
               </label>
               <input
                 type="text"
+                name="name"
                 placeholder="Name"
                 className="input input-bordered"
                 required
@@ -25,6 +41,7 @@ const Signup = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="email"
                   className="input input-bordered"
                   required
@@ -36,6 +53,7 @@ const Signup = () => {
                 </label>
                 <input
                   type="password"
+                  name="password"
                   placeholder="password"
                   className="input input-bordered"
                   required
