@@ -8,7 +8,7 @@ import { BsFacebook, BsInstagram, BsLinkedin, BsMailbox2, BsMap, BsPhone, BsTwit
 const Footer = () => {
     return (
         <div className="bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${footerbg})` }}>
-            <div className=' pt-32 flex flex-col justify-center items-center'>
+            <div className=' pt-20 flex flex-col justify-center items-center'>
                 <div className=' w-[75px]'>
                     <img src={logo} alt="" />
                 </div>
