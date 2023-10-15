@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 
@@ -17,7 +18,7 @@ const Coffee = ({coffee,handleDelete}) => {
             </div>
             <div className="flex flex-col justify-between gap-7">
                 <button onClick={() => handleDelete(_id)} className="btn btn-warning font-rancho">X</button>
-                <button className="btn btn-warning font-rancho">Update</button>
+                <Link to={`/coffee/${_id}`} className="btn btn-warning font-rancho">Update</Link>
             </div>
         </div>
     );
