@@ -80,6 +80,7 @@ const GlobalAuthProv = ({children}) => {
         logOut,
         success,
         faild,
+        isLoading,
 
     }
     return (

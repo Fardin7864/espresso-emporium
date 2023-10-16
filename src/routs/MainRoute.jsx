@@ -6,6 +6,7 @@ import UpdateCoffee from "../components/UpdateCoffee/UpdateCoffee";
 import Error from "../components/ErrorPage/Error";
 import Login from "../pages/Login/Login";
 import Signup from "../pages/Signup/Signup";
+import Privet from "./Privet";
 
 const MainRouter = createBrowserRouter([
     {
@@ -19,11 +20,11 @@ const MainRouter = createBrowserRouter([
             },
             {
                 path: '/addcoffee',
-                element: <AddCoffee></AddCoffee>
+                element: <Privet><AddCoffee></AddCoffee></Privet>
             },
             {
                 path: '/coffee/:id',
-                element: <UpdateCoffee></UpdateCoffee>,
+                element: <Privet><UpdateCoffee></UpdateCoffee></Privet>,
                 loader: ({params}) => fetch(`https://espreso-server-himwxfl6x-fardin7864s-projects.vercel.app/coffee/${params.id}`)
             },
             {

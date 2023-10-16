@@ -1,17 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../components/SocialLogin/SocialLogin";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/GlobalAuthProv";
 
 const Login = () => {
   const {logInwithEmail, success, faild} = useContext(AuthContext);
-
+  const location = useLocation();
+  const navigate  = useNavigate();
+  console.log(location)
   const handleLogin =(e) => { 
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     logInwithEmail(email,password)
     .then(() => { 
+      navigate(location?.state ? `${location.state}` : '/')
       success("log in") })
   .catch(() => {
       faild()})
