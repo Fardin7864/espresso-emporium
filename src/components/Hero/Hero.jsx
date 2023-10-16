@@ -10,7 +10,7 @@ const Hero = () => {
     const [coffees, setCoffees] = useState();
 
     useEffect(() => { 
-        fetch('http://localhost:5000/coffee')
+        fetch('https://espreso-server-himwxfl6x-fardin7864s-projects.vercel.app/coffee')
         .then(res => res.json())
         .then(data => setCoffees(data))
      },[])
@@ -25,12 +25,11 @@ const Hero = () => {
             cancelButtonText: 'No, keep it',
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/coffee/${id}`,{
+                fetch(`https://espreso-server-himwxfl6x-fardin7864s-projects.vercel.app/coffee/${id}`,{
                     method: 'DELETE'
                 })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
                     if (data.deletedCount) {
                         setCoffees(coffees?.filter(coffee => coffee._id !== id))
                     }

@@ -24,7 +24,7 @@ const MainRouter = createBrowserRouter([
             {
                 path: '/coffee/:id',
                 element: <UpdateCoffee></UpdateCoffee>,
-                loader: ({params}) => fetch(`http://localhost:5000/coffee/${params.id}`)
+                loader: ({params}) => fetch(`https://espreso-server-himwxfl6x-fardin7864s-projects.vercel.app/coffee/${params.id}`)
             },
             {
                 path: '/login',

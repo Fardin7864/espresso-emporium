@@ -6,7 +6,7 @@ import { AuthContext } from '../../provider/GlobalAuthProv';
 import { Link } from 'react-router-dom';
 
 const AddCoffee = () => {
-    const{success, faild} = useContext(AuthContext)
+    const{success} = useContext(AuthContext)
     const handleSubmit = (e) => { 
         e.preventDefault();
         const coffee = {
@@ -18,7 +18,7 @@ const AddCoffee = () => {
             details: e.target.details.value,
             photo: e.target.photo.value,
         }
-        fetch('http://localhost:5000/addcoffee',{
+        fetch('https://espreso-server-himwxfl6x-fardin7864s-projects.vercel.app/addcoffee',{
             method: "POST",
             headers: {
                 'content-type': 'application/json'

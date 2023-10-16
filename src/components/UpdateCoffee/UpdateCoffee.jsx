@@ -9,7 +9,7 @@ const UpdateCoffee = () => {
 
     const loadedCoffee = useLoaderData();
 
-    const{success, faild} = useContext(AuthContext)
+    const{success} = useContext(AuthContext)
     const handleSubmit = (e) => { 
         e.preventDefault();
         const coffee = {
@@ -21,7 +21,7 @@ const UpdateCoffee = () => {
             details: e.target.details.value,
             photo: e.target.photo.value,
         }
-        fetch('http://localhost:5000/addcoffee',{
+        fetch('https://espreso-server-himwxfl6x-fardin7864s-projects.vercel.app/addcoffee',{
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -36,8 +36,6 @@ const UpdateCoffee = () => {
             }
         })
      }
-
-
 
     return (
         <div className="bg-cover font-raleway bg-no-repeat bg-center" style={{ backgroundImage: `url(${bgphoto})` }}>
